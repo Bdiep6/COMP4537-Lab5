@@ -142,42 +142,16 @@ class Client
     
     /**
      * Handle insert button click
-     * Sends multiple INSERT queries to the server when the insert button is clicked
      */
     async handleInsert()
     {
-        // An array of SQL INSERT queries
-        const queries = 
-        [
-            "INSERT INTO patient (name, dateOfBirth) VALUES ('Sara Brown', '1901-01-01')",
-            "INSERT INTO patient (name, dateOfBirth) VALUES ('John Smith', '1941-01-01')",
-            "INSERT INTO patient (name, dateOfBirth) VALUES ('Jack Ma', '1961-01-30')",
-            "INSERT INTO patient (name, dateOfBirth) VALUES ('Elon Musk', '1999-01-01')"
-        ];
-
-        // For each query in queries array, send a POST request to the backend
-        try
-        {
-            for (const query of queries)
-            {
-                const response = await fetch(`${this.BACKEND_URL}/insert-dummy`,
-                    {
-                        method:     'POST',
-                        headers:    { 'Content-Type': 'application/json' },
-                        body:       JSON.stringify({ query })
-                    }
-                );
-                // Wait for the response to be processed (parse JSON)
-                await response.json();
-            }
-            // After all inserts are done, display success message
-            this.displayResponse(MessageManager.MESSAGES.INSERT_SUCCESS);
-        }
-        catch (error)
-        {
-            this.displayResponse(MessageManager.MESSAGES.NETWORK_ERROR);
-        }
+        await fetch(`${this.BACKEND_URL}/insert-dummy`, 
+            {  
+                method: 'POST'
+            });
     }
+
+    
 
 }
 
