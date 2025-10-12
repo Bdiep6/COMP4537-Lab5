@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/styles.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Server 1</title>
+</head>
+
+<body>
+    <!-- Main container -->
+    <div class="container">
+
+        <h1 class="mt-5 mb-4" id="page-title"></h1>
+
+        <!-- Seed Button (INSERT) -->
+        <button type="button" class="btn btn-primary mb-3" id="insert-button"></button>
+
+        <!-- SQL Query Form -->
+        <div class="card">
+            <div class="card-body">
+                <form id="sql-form">
+                    <div class="form-group">
+                        <label for="text-area"></label>
+                        <textarea class="form-control" id="text-area" rows="5"></textarea>
+                        <button type="button" class="btn btn-primary" id="submit-button"></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Response -->
+        <div class="card-body" id="response"></div>
+
+
+    </div>
+    <!-- Main container END -->
+
+    <!-- Scripts -->
+    <script src="./js/client.js" type="module"></script>
+</body>
+
+</html>
