@@ -5,4 +5,4 @@
  * @description This file contains all constants.
 */
 
-export const BACKEND_URL = ""; // Update to your Server2 URL
+export const BACKEND_URL = "https://lab5.yujinjeong-comp4537-labs-0.com/"; // Update to your Server2 URL
