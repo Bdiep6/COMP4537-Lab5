@@ -145,10 +145,21 @@ class Client
      */
     async handleInsert()
     {
-        await fetch(`${this.BACKEND_URL}/insert-dummy`, 
-            {  
-                method: 'POST'
-            });
+        try
+        {
+            const response = await fetch(`${this.BACKEND_URL}/insert-dummy`, 
+                {  
+                    method: 'POST'
+                });
+            
+            const data = await response.json();
+            
+            this.displayResponse(JSON.stringify(data, null, 2));
+        }
+        catch (error)
+        {
+            this.displayResponse(MessageManager.MESSAGES.QUERY_ERROR);
+        }
     }
 
     
